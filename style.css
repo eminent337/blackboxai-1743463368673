@@ -1,0 +1,69 @@
+/* Additional styles beyond Tailwind */
+#notebook-container {
+    background-color: #f8f9fa;
+}
+
+.code-cell {
+    border-left: 4px solid var(--colab-blue);
+    transition: all 0.2s ease;
+}
+
+.code-cell:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.markdown-cell {
+    border-left: 4px solid var(--colab-green);
+}
+
+.output-area {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--colab-red);
+}
+
+.output-area pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .code-cell {
+        padding: 1rem;
+    }
+}
+
+/* Animation for running cells */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.running-cell {
+    animation: pulse 1.5s infinite;
+    border-left-color: var(--colab-yellow);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
